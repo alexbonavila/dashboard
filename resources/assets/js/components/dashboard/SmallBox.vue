@@ -1,6 +1,6 @@
 <template>
     <div class="col-lg-3 col-xs-6">
-        <div class="small-box bg-aqua">
+        <div class="small-box" :class="color">
             <div class="inner">
                 <h3>{{ value }}</h3>
 
@@ -29,6 +29,10 @@
             name: {
               type: String,
               required: true
+            },
+            color: {
+              type: String,
+              default: 'bg-aqua'
             }
           },
         mounted() {
