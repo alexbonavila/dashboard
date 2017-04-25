@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\Task;
 use App\Thread;
 use Illuminate\Http\Request;
@@ -44,4 +45,8 @@ class DashboardController extends Controller
         factory(\App\Thread::class)->create();
     }
 
+    public function fetchActivityFeed()
+    {
+        return Activity::all();
+    }
 }
