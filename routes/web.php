@@ -36,6 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('activity-feed', 'DashboardController@fetchActivityFeed');
 
 
-    Route::get('dashboard/graphs/1', 'DashboardController@graph1');
+
 
 });
+
+Route::get('dashboard/graphs/1', 'DashboardController@graph1');
