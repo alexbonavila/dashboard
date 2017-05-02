@@ -61,7 +61,7 @@ trait RecordsActivity
     public function activity()
     {
         return $this->morphMany('App\Activity', 'subject');
-    }ubn
+    }
 
     /**
      * Determine the activity type.
