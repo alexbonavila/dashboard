@@ -45,6 +45,7 @@
             </div>
         </div>
 
+
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
@@ -211,6 +212,34 @@
 
 			</div>
 		</div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <graph
+                        :labels="{{ $labels1 }}"
+                        :values="{{ $values1 }}"
+                        color="red"
+                ></graph>
+            </div>
+            <div class="col-lg-6">
+                <graph
+                        :labels="{{ $labels2 }}"
+                        :values="{{ $values2 }}"
+                ></graph>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <graph url="/dashboard/graphs/1"></graph>
+            </div>
+            <div class="col-lg-9">
+                <graph
+                        :labels="['dsaassd', 'February', 'March', 'April', 'May', 'June', 'July']"
+                        :values="[67,42,445,23,23,76]"
+                ></graph>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">

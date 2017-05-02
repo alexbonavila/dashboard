@@ -10,13 +10,24 @@ trait RecordsActivity
      */
     protected static function bootRecordsActivity()
     {
-//        if (auth()->guest()) return;
+        if (auth()->guest()) return;
 
         foreach (static::getActivitiesToRecord() as $event) {
             static::$event(function ($model) use ($event) {
                 $model->recordActivity($event);
             });
         }
+//        static::created(function ($model) {
+//            $model->recordActivity('created');
+//        });
+//
+//        static::updated(function ($model) {
+//            $model->recordActivity('updated');
+//        });
+//
+//        static::deleted(function ($model) {
+//            $model->recordActivity('deleted');
+//        });
     }
 
     /**
@@ -36,10 +47,10 @@ trait RecordsActivity
      */
     protected function recordActivity($event)
     {
-        $this->activity()->create([
-            'user_id' => auth()->id(),
-            'type' => $this->getActivityType($event)
-        ]);
+            $this->activity()->create([
+                'user_id' => auth()->id(),
+                'type' => $this->getActivityType($event)
+            ]);
     }
 
     /**
@@ -50,7 +61,7 @@ trait RecordsActivity
     public function activity()
     {
         return $this->morphMany('App\Activity', 'subject');
-    }
+    }ubn
 
     /**
      * Determine the activity type.
